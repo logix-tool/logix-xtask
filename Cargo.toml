@@ -1,6 +1,6 @@
 [package]
 name = "logix-xtask"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "helper library that provides `cargo xtask` functionality for the Logix crates."
 repository = "https://github.com/logix-tool/logix-xtask"

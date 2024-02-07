@@ -45,7 +45,7 @@ static ACTIONS: &[(&str, &[Action])] = &[
         "all-checks",
         &[
             Cargo("deny", &["check"]),
-            // TODO(2023.10): Cargo("semver-checks", &[]),
+            Cargo("semver-checks", &[]),
             Cargo("outdated", &["--exit-code", "1"]),
             // TODO(2023.10): NightlyCargo("udeps", &[]),
             // TODO(2023.10): Cargo("audit", &[]),
