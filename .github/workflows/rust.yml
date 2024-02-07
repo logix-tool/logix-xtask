@@ -1,0 +1,42 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: logix-tool/github-actions/cargo-deny@main
+      with:
+          token: ${{ secrets.READ_PUBLIC_TOKEN }}
+
+    - uses: logix-tool/github-actions/cargo-semver-checks@main
+      with:
+          token: ${{ secrets.READ_PUBLIC_TOKEN }}
+
+    - name: Run linters
+      run: |
+          cargo xtask lints
+
+    - name: Run build
+      run: |
+          cargo xtask build-all
+
+    - name: Run checks
+      run: |
+          cargo xtask all-checks
+
+    - name: Run tests
+      run: |
+          cargo xtask all-tests
