@@ -1,12 +1,9 @@
 [package]
 name = "xtask"
-version = "0.1.0"
+version.workspace = true
 edition = "2021"
-authors = [
-  "Bjørn Ove Hay Andersen <bjrnove@gmail.com>",
-  "Gigantos <gigantos@gigantos.net>",
-]
-license = "MPL-2.0"
+authors.workspace = true
+license.workspace = true
 
 [dependencies]
-logix-xtask = { version = "0.1.0", path = ".." }
+logix-xtask = { version = "0.2.0", path = ".." }
